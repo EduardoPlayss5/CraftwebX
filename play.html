@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            background-color: #1e1e1e;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .fade-in-out {
+            animation: fade 4s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img class="fade-in-out" id="animated-image" src="craftweb_logo_startup.png" alt="Project Logo">
+</body>
+
+<script>
+    function logo(){
+        setTimeout(function() {
+            document.getElementById("animated-image").style.animation = "fade 4s ease-in-out forwards";
+            init();
+        }, 4000);
+    }
+
+    function init(){
+        var fio = document.getElementById("animated-image");
+
+        fio.remove();
+
+        var iframe = document.createElement("iframe");
+        iframe.src = "games/updated.html";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        
+        document.body.style.background = "#fff";
+        document.body.appendChild(iframe);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("Craftweb X is starting up...");
+        logo();
+    })
+</script>
+
+</html>

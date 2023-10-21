@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        #menubar {
+            background: black;
+            align-items: center;
+            text-align: center;
+        }
+
+        #navbtn {
+            background-color: blue;
+            background: red;
+        }
+
+        .maintxt {
+            text-align: center;
+            margin: 9px;
+        }
+
+        .mainbtn {
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body background="resources/wallpaper.jpg">
+    <div class="menu">
+        <nav id="menubar">
+            <a href="play.html" id="navbtn">Play Now!</a><br><a href="about.html" id="navbtn">About</a><br><a href="games/updated.html" id="navbtn">Normal Play (Without iframe, can be slowly. but you can view js logs and 50 to 100% chance of crash)</a>
+        </nav>
+    </div>
+    <div class="app">
+        <h1 class="maintxt">Craftweb is a open-source and a functional edition of EaglercraftX.</h1>
+        <a href="play.html" class="mainbtn">Play with iframe</a>
+        <p class="maintxt">or</p>
+        <a href="games/updated.html" class="mainbtn">Play</a>
+        <br>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        if(document.location.href.startsWith("file:")) {
+            var target1 = document.querySelector(".app");
+            var target2 = document.querySelector(".menu");
+
+            target1.remove();
+            target2.remove();
+
+			alert("You cant 'open' this file. upload this project to a http server and run it from http");
+		} else {
+            console.log("Craftweb X 1.8.8 Portal")
+        }
+    });
+</script>
+
+</html>
